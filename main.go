@@ -24,20 +24,44 @@ func personConstructor(name string, age int) person {
 // Main
 
 func main() {
-	bobby := personConstructor("bobby", 15)
-	john := personConstructor("john", 19)
-	peter := personConstructor("peter", 27)
-	joan := personConstructor("joan", 45)
-	alibaba := personConstructor("alibaba", 60)
-	checkPerson(bobby)
-	checkPerson(john)
-	checkPerson(peter)
-	checkPerson(joan)
-	checkPerson(alibaba)
-
+	//bobby := personConstructor("bobby", 15)
+	//john := personConstructor("john", 19)
+	//peter := personConstructor("peter", 27)
+	//joan := personConstructor("joan", 45)
+	//alibaba := personConstructor("alibaba", 60)
+	//checkPerson(bobby)
+	//checkPerson(john)
+	//checkPerson(peter)
+	//checkPerson(joan)
+	//checkPerson(alibaba)
 	//for i := range [7]int{} {
-	printPrediction(10)
+	//printPrediction(10)
 	//}
+
+	// min finding
+	//numbers := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -255, 254, -444, 666}
+	//printMessage(fmt.Sprintf(
+	//	"The min number of \n%d\nis: %d",
+	//	numbers,
+	//	findMin(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -255, 254, -444, 666),
+	//))
+
+	// anonymous func
+	inc := increment()
+	dec := decrement()
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(dec())
+	fmt.Println(dec())
+	fmt.Println(dec())
+	fmt.Println(dec())
+	fmt.Println(dec())
+	fmt.Println(dec())
+	fmt.Println(dec())
 }
 
 func logError(err error) {
@@ -162,4 +186,36 @@ func printPrediction(weekdayIndex int) {
 		return
 	}
 	fmt.Println(prediction)
+}
+
+func findMin(numbers ...int) int {
+	if len(numbers) == 0 {
+		return 0
+	}
+
+	min := numbers[0]
+
+	for _, i := range numbers {
+		if i < min {
+			min = i
+		}
+	}
+
+	return min
+}
+
+func increment() func() int {
+	count := 0
+	return func() int {
+		count++
+		return count
+	}
+}
+
+func decrement() func() int {
+	count := 10
+	return func() int {
+		count--
+		return count
+	}
 }
