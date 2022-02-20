@@ -1,2 +1,6 @@
-# go-practice
-Some practice of Go lang
+# Go version
+```
+$go version
+```
+
+go1.17.7
