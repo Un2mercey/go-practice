@@ -21,32 +21,40 @@ func personConstructor(name string, age int) person {
 	}
 }
 
+var msg string
+
+// Init
+
+func init() {
+	msg = "msg var was updated at the init() func before main() func"
+}
+
 // Main
 
 func main() {
-	//bobby := personConstructor("bobby", 15)
-	//john := personConstructor("john", 19)
-	//peter := personConstructor("peter", 27)
-	//joan := personConstructor("joan", 45)
-	//alibaba := personConstructor("alibaba", 60)
-	//checkPerson(bobby)
-	//checkPerson(john)
-	//checkPerson(peter)
-	//checkPerson(joan)
-	//checkPerson(alibaba)
-	//for i := range [7]int{} {
-	//printPrediction(10)
-	//}
+	bobby := personConstructor("bobby", 15)
+	john := personConstructor("john", 19)
+	peter := personConstructor("peter", 27)
+	joan := personConstructor("joan", 45)
+	alibaba := personConstructor("alibaba", 60)
+	checkPerson(bobby)
+	checkPerson(john)
+	checkPerson(peter)
+	checkPerson(joan)
+	checkPerson(alibaba)
+	for i := range [7]int{} {
+		printPrediction(i)
+	}
 
-	// min finding
-	//numbers := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -255, 254, -444, 666}
-	//printMessage(fmt.Sprintf(
-	//	"The min number of \n%d\nis: %d",
-	//	numbers,
-	//	findMin(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -255, 254, -444, 666),
-	//))
+	//min finding
+	numbers := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -255, 254, -444, 666}
+	printMessage(fmt.Sprintf(
+		"The min number of \n%d\nis: %d",
+		numbers,
+		findMin(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -255, 254, -444, 666),
+	))
 
-	// anonymous func
+	//anonymous func
 	inc := increment()
 	dec := decrement()
 	fmt.Println(inc())
@@ -62,6 +70,8 @@ func main() {
 	fmt.Println(dec())
 	fmt.Println(dec())
 	fmt.Println(dec())
+
+	fmt.Println(msg)
 }
 
 func logError(err error) {
