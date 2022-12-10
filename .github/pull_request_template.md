@@ -21,6 +21,6 @@ PR instruction:
 
 ## Description
 
-<!-- Additional information to the description in JIRA -->
+<!-- Additional information -->
 
 -
