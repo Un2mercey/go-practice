@@ -1,11 +1,13 @@
 ### Go version
-```
-$go version
+```shell
+go version
 ```
 output: 
-`go1.17.7`
+```text
+go version go1.19.4 darwin/arm64
+```
 
 ### Starting the app
-```
+```shell
 go run main.go
 ```
